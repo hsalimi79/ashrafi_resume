@@ -369,7 +369,8 @@ export const projects = [
   },
   {
     id: 'javaneha',
-    slug: null,
+    slug: 'javaneha',
+    cover: 4,
     n: '04',
     color: '#f2a93b',
     title: { fa: 'مهدکودک جوانه‌ها', en: 'Javaneha Kindergarten' },
@@ -461,9 +462,9 @@ export const projects = [
 
 // Fill these in when you want contact buttons to appear. Empty values are hidden.
 export const contact = {
-  phone: '',      // e.g. '+989121234567'
-  whatsapp: '',   // e.g. '989121234567'
-  telegram: '',   // e.g. 'username'
-  instagram: '',  // e.g. 'username'
+  phone: '+989130949003',
+  whatsapp: '989374865645',
+  telegram: '+989374865645',
+  instagram: 'decomode_esf',
   email: '',      // e.g. 'name@example.com'
 };
