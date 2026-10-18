@@ -1563,22 +1563,36 @@ html[dir='rtl'] .vid__play .ico {
 .viewer::backdrop {
   background: #000;
 }
+.viewer {
+  --pad: clamp(10px, 4vw, 70px);
+}
 .viewer__stage {
   position: absolute;
   inset: 0;
   display: grid;
   place-items: center;
-  padding: clamp(10px, 4vw, 70px);
+  padding: var(--pad);
 }
+/* explicit caps: a % max-height inside an auto grid row does not constrain tall (vertical) videos */
 .viewer__media {
   max-width: 100%;
-  max-height: 100%;
+  max-height: calc(100svh - var(--pad) * 2);
   width: auto;
   height: auto;
   border-radius: 12px;
   object-fit: contain;
   box-shadow: 0 30px 100px -20px rgba(0, 0, 0, 0.8);
   animation: pop 0.45s var(--ease);
+}
+@media (max-width: 760px) {
+  /* leave room for the prev/next buttons and the counter under the media */
+  .viewer__media {
+    max-height: calc(100svh - var(--pad) - 96px);
+  }
+  .viewer__stage {
+    align-items: start;
+    padding-block-start: 64px;
+  }
 }
 .viewer__btn {
   position: absolute;
