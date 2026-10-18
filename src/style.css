@@ -1487,6 +1487,15 @@ html[lang='fa'] .facts dt {
   object-fit: cover;
   transition: transform 0.8s var(--ease);
 }
+@media (max-width: 600px) {
+  .vids {
+    grid-template-columns: 1fr;
+  }
+  .vid {
+    max-height: none;
+    width: 100%;
+  }
+}
 .vid:hover img {
   transform: scale(1.05);
 }
