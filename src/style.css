@@ -1492,8 +1492,16 @@ html[lang='fa'] .facts dt {
     grid-template-columns: 1fr;
   }
   .vid {
-    max-height: none;
+    display: block;
     width: 100%;
+    height: auto;
+    max-height: none;
+    align-self: start;
+    justify-self: stretch;
+  }
+  .vid img {
+    position: absolute;
+    inset: 0;
   }
 }
 .vid:hover img {
