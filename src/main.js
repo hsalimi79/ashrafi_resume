@@ -24,17 +24,20 @@ const bi = (o) => `<span data-l="fa">${o.fa}</span><span data-l="en">${o.en}</sp
 const toFA = (n) => String(n).replace(/\d/g, (d) => '۰۱۲۳۴۵۶۷۸۹'[d]);
 const getLang = () => document.documentElement.lang;
 
+// The link decides the language: ?lang=en -> English, anything else (including no param) -> Persian.
 function initialLang() {
-  const q = new URLSearchParams(location.search).get('lang');
-  if (q === 'fa' || q === 'en') return q;
-  try {
-    const s = localStorage.getItem('lang');
-    if (s === 'fa' || s === 'en') return s;
-  } catch {}
-  return (navigator.language || 'fa').toLowerCase().startsWith('fa') ? 'fa' : 'en';
+  return new URLSearchParams(location.search).get('lang') === 'en' ? 'en' : 'fa';
 }
 
-function applyLang(lang, { persist = true } = {}) {
+// keep the address bar in sync so a copied link carries the current language
+function syncUrl(lang) {
+  const url = new URL(location.href);
+  if (lang === 'en') url.searchParams.set('lang', 'en');
+  else url.searchParams.delete('lang');
+  history.replaceState(history.state, '', url);
+}
+
+function applyLang(lang, { sync = true } = {}) {
   const root = document.documentElement;
   root.lang = lang;
   root.dir = lang === 'fa' ? 'rtl' : 'ltr';
@@ -49,11 +52,7 @@ function applyLang(lang, { persist = true } = {}) {
   document.querySelectorAll('[data-aria]').forEach((el) => {
     el.setAttribute('aria-label', el.dataset[`aria${lang === 'fa' ? 'Fa' : 'En'}`]);
   });
-  if (persist) {
-    try {
-      localStorage.setItem('lang', lang);
-    } catch {}
-  }
+  if (sync) syncUrl(lang);
   layoutScene();
   requestAnimationFrame(() => ScrollTrigger.refresh());
 }
@@ -780,7 +779,7 @@ document.getElementById('app').innerHTML = [
   `</main>`,
 ].join('');
 
-applyLang(lang0, { persist: false });
+applyLang(lang0, { sync: false });
 initSmooth();
 initNav();
 initScrollFx();
