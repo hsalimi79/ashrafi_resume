@@ -25,8 +25,8 @@ Optimized copies (WebP / H.264) live in `public/media` (~600 MB, every file < 10
 
 ## Language links
 The link picks the language; no parameter means Persian.
-- Persian: `https://<site>/`
+- Persian: `https://<site>/` (or `?lang=fa`)
 - English: `https://<site>/?lang=en`
 - A project, in English: `https://<site>/?lang=en#/project/einstein`
 (project ids: `kids-land`, `kidzlounge`, `einstein`, `javaneha`, `expo`, `fereshtegan`)
-The language button also updates the address bar, so copying the URL keeps the language.
+The language button writes `?lang=fa` or `?lang=en` into the address bar, so copying the URL keeps the language.

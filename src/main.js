@@ -25,6 +25,7 @@ const toFA = (n) => String(n).replace(/\d/g, (d) => '۰۱۲۳۴۵۶۷۸۹'[d]);
 const getLang = () => document.documentElement.lang;
 
 // The link decides the language: ?lang=en -> English, anything else (including no param) -> Persian.
+// Pressing the language button writes the chosen language into the address bar.
 function initialLang() {
   return new URLSearchParams(location.search).get('lang') === 'en' ? 'en' : 'fa';
 }
@@ -32,8 +33,7 @@ function initialLang() {
 // keep the address bar in sync so a copied link carries the current language
 function syncUrl(lang) {
   const url = new URL(location.href);
-  if (lang === 'en') url.searchParams.set('lang', 'en');
-  else url.searchParams.delete('lang');
+  url.searchParams.set('lang', lang);
   history.replaceState(history.state, '', url);
 }
 
