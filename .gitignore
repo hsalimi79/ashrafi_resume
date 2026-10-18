@@ -1,0 +1,12 @@
+node_modules
+dist
+optimize.log
+.DS_Store
+# raw, un-optimized originals (the optimized copies live in public/media)
+project1*/
+project2*/
+project3*/
+project4*/
+project5*/
+(عکس*/
+ashrafi_image.png
