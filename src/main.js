@@ -274,8 +274,11 @@ function approachHTML() {
 
 function contactHTML() {
   const c = ui.contact;
-  const links = [];
-  if (contact.phone) links.push(`<a class="btn btn--primary" href="tel:${contact.phone}">${icon('phone')}<span dir="ltr">${contact.phone}</span></a>`);
+  const links = [
+    `<a class="btn btn--primary" data-l="fa" href="${asset('downloads/Mohammad-Javad-Ashrafi-Resume-FA.pdf')}" download>${icon('download')}دانلود رزومه (PDF)</a>`,
+    `<a class="btn btn--primary" data-l="en" href="${asset('downloads/Mohammad-Javad-Ashrafi-Resume-EN.pdf')}" download>${icon('download')}Download resume (PDF)</a>`,
+  ];
+  if (contact.phone) links.push(`<a class="btn btn--ghost" href="tel:${contact.phone}">${icon('phone')}<span dir="ltr">${contact.phone}</span></a>`);
   if (contact.whatsapp) links.push(`<a class="btn btn--ghost" href="https://wa.me/${contact.whatsapp}" target="_blank" rel="noopener">${icon('chat')}WhatsApp</a>`);
   if (contact.telegram) links.push(`<a class="btn btn--ghost" href="https://t.me/${contact.telegram}" target="_blank" rel="noopener">${icon('send')}Telegram</a>`);
   if (contact.instagram) links.push(`<a class="btn btn--ghost" href="https://instagram.com/${contact.instagram}" target="_blank" rel="noopener">${icon('insta')}Instagram</a>`);
@@ -516,6 +519,7 @@ function initStage() {
   const canvas = document.getElementById('stage');
   try {
     stage = createScene(canvas);
+    window.__stage = stage; // handy for screenshots and debugging
   } catch (err) {
     console.warn('WebGL unavailable, 3D stage disabled', err);
     canvas.remove();

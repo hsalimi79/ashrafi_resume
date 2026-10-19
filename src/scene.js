@@ -333,5 +333,5 @@ export function createScene(canvas) {
   resize();
   window.addEventListener('resize', resize);
 
-  return { state, start, stop, resize, renderer, isRunning: () => running };
+  return { state, start, stop, resize, renderer, grid, isRunning: () => running };
 }

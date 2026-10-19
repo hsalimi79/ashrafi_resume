@@ -30,3 +30,11 @@ The link picks the language; no parameter means Persian.
 - A project, in English: `https://<site>/?lang=en#/project/einstein`
 (project ids: `kids-land`, `kidzlounge`, `einstein`, `javaneha`, `expo`, `fereshtegan`)
 The language button writes `?lang=fa` or `?lang=en` into the address bar, so copying the URL keeps the language.
+
+## Resume PDFs (Persian + English)
+`npm run build` does not regenerate them. To rebuild after editing `src/data/content.js`:
+```
+npx vite preview --port 4173 &      # only needed to re-capture the 3D snapshots
+node scripts/snapshot-scene.mjs     # optional: pdf/assets/scene-*.png
+node scripts/build-pdf.mjs          # -> public/downloads/*.pdf
+```
