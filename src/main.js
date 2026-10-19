@@ -286,6 +286,7 @@ function contactHTML() {
   return `
   <section class="contact" id="contact">
     <div class="wrap contact__inner">
+      <img class="contact__logo" data-reveal src="${asset('img/logo.webp')}" width="1476" height="690" alt="Decomode — Interior Design & Decoration" loading="lazy" decoding="async" />
       <p class="kicker" data-reveal>${bi(c.kicker)}</p>
       <h2 class="contact__title" data-reveal>${bi(c.title)}</h2>
       <p class="sub" data-reveal>${bi(c.text)}</p>
