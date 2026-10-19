@@ -31,10 +31,10 @@ export const ui = {
   },
   about: {
     kicker: { fa: 'درباره', en: 'About' },
-    title: { fa: 'معماری که دست‌هایش را هم به کار می‌گیرد', en: 'An architect who builds with his own hands' },
+    title: { fa: 'معماری که دست‌هایش را هم به کار می‌گیرد', en: 'An architect who works with their hands, too' },
     born: {
       fa: 'متولد ۱۱ اسفند ۱۳۷۲ · فارغ‌التحصیل مهندسی معماری، دانشگاه آزاد اسلامی واحد دولت‌آباد اصفهان، ۱۳۹۵',
-      en: 'Born 2 March 1994 · Graduate in Architectural Engineering, Islamic Azad University (Dolatabad Branch), Isfahan, 2016',
+      en: 'Born 2 March 1994 · Graduate in Architectural Engineering, Islamic Azad University (Dolatabad Branch), Isfahan, 1395 SH (2016–17)',
     },
     paragraphs: [
       {
@@ -47,7 +47,7 @@ export const ui = {
       },
       {
         fa: 'تجربه عملی در طراحی و اجرای کلبه‌های مشاغل، سازه‌های بازی چندطبقه، دکوراسیون داخلی فضاهای کودک، ساخت مبلمان سفارشی، گرین‌وال و محوطه‌سازی، فلاورباکس و نیمکت، سازه‌های فلزی، نصب روشنایی و طراحی، ساخت و نصب لوگوهای دکوراتیو.',
-        en: 'Hands-on experience designing and building role-play job huts, multi-level play structures, children’s interiors, custom furniture, green walls and landscaping, flower boxes and benches, metal structures, lighting installation, and decorative logos.',
+        en: 'Hands-on experience designing and building role-play job huts, multi-level play structures, children’s interiors, custom furniture, green walls and landscaping, flower boxes and benches, metal structures, lighting installation, and the design, fabrication and installation of decorative logos.',
       },
       {
         fa: 'رویکرد حرفه‌ای بر پایه خلاقیت، کیفیت اجرا، توجه به جزئیات و تبدیل ایده‌ها به فضاهایی زیبا، کاربردی و ماندگار شکل گرفته است.',
@@ -62,7 +62,7 @@ export const ui = {
     stats: [
       { value: 6, label: { fa: 'پروژه شاخص', en: 'Featured projects' } },
       { value: 8, label: { fa: 'حوزه تخصصی', en: 'Areas of expertise' } },
-      { value: 1395, en: 2016, label: { fa: 'فارغ‌التحصیلی معماری', en: 'Architecture degree' }, plain: true },
+      { value: 1395, en: '2016/17', label: { fa: 'فارغ‌التحصیلی معماری', en: 'Architecture graduate' }, plain: true },
     ],
   },
   process: {
@@ -72,7 +72,7 @@ export const ui = {
     prev: { fa: 'مرحله قبل', en: 'Previous' },
     hint: {
       fa: 'روی مراحل بزنید و ببینید مدل قدم‌به‌قدم ساخته می‌شود.',
-      en: 'Tap the steps and watch the model get built, one stage at a time.',
+      en: 'Click or tap a step to watch the model get built, stage by stage.',
     },
     stepsLabel: { fa: 'مراحل فرایند', en: 'Process steps' },
     steps: [
@@ -87,21 +87,21 @@ export const ui = {
         t: { fa: 'نقشه‌های فنی', en: 'Technical drawings' },
         d: {
           fa: 'تهیه نقشه‌های فنی با AutoCAD، اندازه‌گذاری دقیق و آماده‌سازی طرح‌ها برای ساخت.',
-          en: 'Technical drawings in AutoCAD, precise dimensioning and preparing the designs for fabrication.',
+          en: 'Technical drawings in AutoCAD, precise dimensioning and and preparing the designs for fabrication.',
         },
       },
       {
         t: { fa: 'برش CNC', en: 'CNC cutting' },
         d: {
           fa: 'آماده‌سازی فایل‌های برش، هماهنگی و سفارش برش روی متریال مناسب با مجموعه‌های ارائه‌دهنده خدمات CNC.',
-          en: 'Preparing cut files, then coordinating and ordering the cutting on the right material with CNC service providers.',
+          en: 'Preparing cut files, then coordinating and ordering the cutting on the right material from CNC service providers.',
         },
       },
       {
         t: { fa: 'ساخت و مونتاژ', en: 'Build & assembly' },
         d: {
           fa: 'همکاری در ساخت اسکلت فلزی، اجرای پوشش MDF و مونتاژ قطعات با تکیه بر تجربه کارگاهی.',
-          en: 'Building the metal frame (with a helper), MDF cladding and assembling the parts — backed by real workshop experience.',
+          en: 'Contributing to the metal frame, MDF cladding and assembly of the parts — backed by hands-on workshop experience.',
         },
       },
       {
@@ -121,7 +121,7 @@ export const ui = {
     },
     intro: {
       fa: 'پروژه‌های مهدکودک و خانه بازی — سرزمین کودکی، کیدزلانژ، انیشتین، جوانه‌ها و فرشتگان — شامل کلبه‌های مشاغل، سازه‌های چندطبقه بازی، دکورهای MDF، فضاهای مدیریتی، ورودی‌های دکوراتیو، دیوارهای تزئینی و تجهیزات سفارشی، به‌همراه محوطه‌سازی دکوراتیو، گارد باغچه، گرین‌وال، فلاورباکس و نیمکت.',
-      en: 'Kindergarten and play-house projects — Kids Land, KidzLounge, Einstein, Javaneha and Fereshtegan — covering job huts, multi-level play structures, MDF decor, office spaces, decorative entrances, feature walls and custom fixtures, plus decorative landscaping, planter guards, green walls, flower boxes and benches.',
+      en: 'Kindergarten and play-house projects — Kids Land, KidzLounge, Einstein, Javaneha and Fereshtegan — covering role-play job huts, multi-level play structures, MDF decor, office spaces, decorative entrances, feature walls and custom fixtures, plus decorative landscaping, planter guards, green walls, flower boxes and benches.',
     },
     open: { fa: 'مشاهده پروژه', en: 'Open project' },
     activities: { fa: 'فعالیت‌های انجام‌شده', en: 'What was done' },
@@ -206,7 +206,7 @@ export const services = [
     t: { fa: 'فضای باز و محوطه', en: 'Outdoor spaces' },
     items: [
       { fa: 'گرین‌وال و دیوار سبز', en: 'Green walls' },
-      { fa: 'باغچه‌های دکوراتیو و گارد دور باغچه', en: 'Decorative planters and guards' },
+      { fa: 'باغچه‌های دکوراتیو و گارد دور باغچه', en: 'Decorative planters with protective guards' },
       { fa: 'فلاورباکس و نیمکت سفارشی', en: 'Custom flower boxes and benches' },
       { fa: 'المان‌های کاربردی و تزئینی محوطه', en: 'Functional and decorative yard elements' },
     ],
@@ -225,10 +225,10 @@ export const services = [
     icon: 'frame',
     t: { fa: 'سازه‌های فلزی و کارهای فنی', en: 'Metal structures & technical work' },
     items: [
-      { fa: 'همکاری در اسکلت‌های فلزی سازه‌های بازی', en: 'Building steel frames for play structures' },
+      { fa: 'همکاری در اسکلت‌های فلزی سازه‌های بازی', en: 'Helping build steel frames for play structures' },
       { fa: 'برش، مونتاژ و نصب قطعات فلزی', en: 'Cutting, assembling and fitting metal parts' },
       { fa: 'جوشکاری در سطح مقدماتی', en: 'Basic-level welding' },
-      { fa: 'پوشش MDF روی سازه و تکمیل جزئیات', en: 'MDF cladding over structures and final detail' },
+      { fa: 'پوشش MDF روی سازه و تکمیل جزئیات', en: 'MDF cladding over structures, with final detailing' },
     ],
   },
   {
@@ -236,18 +236,18 @@ export const services = [
     t: { fa: 'روشنایی و تجهیزات دکوراتیو', en: 'Lighting & decorative fixtures' },
     items: [
       { fa: 'نصب چراغ و تجهیزات روشنایی', en: 'Installing lights and lighting fixtures' },
-      { fa: 'نصب براکت و پایه‌های نگهدارنده', en: 'Brackets and mounting supports' },
-      { fa: 'هماهنگ‌سازی نور با طراحی داخلی', en: 'Tuning light to the interior design' },
+      { fa: 'نصب براکت و پایه‌های نگهدارنده', en: 'Installing brackets and mounting supports' },
+      { fa: 'هماهنگ‌سازی نور با طراحی داخلی', en: 'Matching the lighting to the interior design' },
     ],
   },
   {
     icon: 'ruler',
-    t: { fa: 'طراحی فنی و آماده‌سازی', en: 'Technical design & prep' },
+    t: { fa: 'طراحی فنی و آماده‌سازی', en: 'Technical design & preparation' },
     items: [
       { fa: 'نقشه‌های فنی با AutoCAD', en: 'Technical drawings in AutoCAD' },
-      { fa: 'اندازه‌گذاری و آماده‌سازی طرح برای ساخت', en: 'Dimensioning and build-ready designs' },
-      { fa: 'فایل‌های برش CNC و هماهنگی با ارائه‌دهندگان خدمات', en: 'CNC cut files and coordination with providers' },
-      { fa: 'راهکار متناسب با محدودیت‌های فضا', en: 'Solutions shaped to each space’s limits' },
+      { fa: 'اندازه‌گذاری و آماده‌سازی طرح برای ساخت', en: 'Dimensioning and preparing designs for fabrication' },
+      { fa: 'فایل‌های برش CNC و هماهنگی با ارائه‌دهندگان خدمات', en: 'CNC cut files and coordination with cutting service providers' },
+      { fa: 'راهکار متناسب با محدودیت‌های فضا', en: 'Solutions tailored to each space’s constraints' },
     ],
   },
   {
@@ -283,14 +283,14 @@ export const projects = [
     title: { fa: 'سرزمین کودکی', en: 'Kids Land' },
     sub: { fa: 'Kids Land', en: 'سرزمین کودکی' },
     location: { fa: 'اصفهان', en: 'Isfahan' },
-    year: { fa: '۱۴۰۲ و پروژه‌های تکمیلی', en: '2023 + follow-up works' },
+    year: { fa: '۱۴۰۲ و پروژه‌های تکمیلی', en: '2023–24, plus later follow-up work' },
     topic: {
       fa: 'طراحی و اجرای دکوراسیون داخلی خانه بازی و مهدکودک، همراه با ساخت تجهیزات محوطه',
       en: 'Interior design and build of a play house and kindergarten, plus yard equipment',
     },
     summary: {
       fa: 'طراحی و اجرای بخش‌های مختلف یک فضای بازی کودک با الهام از نمونه‌های خارجی. تمرکز اصلی بر ساخت فضاهای نقش‌آفرینی و ایجاد محیطی جذاب، کاربردی و متناسب با نیاز کودکان بود. در ادامه نیز تجهیزات تکمیلی محوطه ساخته شد.',
-      en: 'Design and construction of the different parts of a children’s play space, inspired by international examples. The main focus was building role-play areas — attractive, practical and shaped to children’s needs — followed by complementary equipment for the yard.',
+      en: 'Design and construction of the different parts of a children’s play space, inspired by examples from abroad. The main focus was building role-play areas — attractive, practical and suited to children’s needs — followed by complementary equipment for the yard.',
     },
     activities: [
       { fa: 'طراحی و اجرای کلبه‌های مشاغل کودک، شامل فضاهای فروشگاهی و خدماتی', en: 'Designed and built children’s job huts — shops and service spaces' },
@@ -299,8 +299,8 @@ export const projects = [
       { fa: 'مونتاژ و نصب قطعات و اجرای جزئیات دکوراتیو', en: 'Assembly, installation and decorative details' },
       { fa: 'اجرای کف‌پوش و دیوارپوش', en: 'Flooring and wall cladding' },
       { fa: 'اجرای سقف و نورپردازی فضای داخلی', en: 'Ceiling and interior lighting' },
-      { fa: 'انجام بخشی از کارهای الکتریکی سبک', en: 'Part of the light electrical work' },
-      { fa: 'ساخت و نصب نرده و حفاظ چوبی در محوطه', en: 'Wooden railing and guards in the yard' },
+      { fa: 'انجام بخشی از کارهای الکتریکی سبک', en: 'Some of the light electrical work' },
+      { fa: 'ساخت و نصب نرده و حفاظ چوبی در محوطه', en: 'Wooden railings and guards in the yard' },
       { fa: 'نصب چمن مصنوعی', en: 'Artificial turf installation' },
       { fa: 'رنگ‌آمیزی و پرداخت نهایی بخش‌های چوبی', en: 'Painting and final finishing of wooden parts' },
       { fa: 'طراحی و ساخت فلاورباکس برای محوطه', en: 'Designed and built flower boxes for the yard' },
@@ -332,17 +332,17 @@ export const projects = [
     activities: [
       { fa: 'طراحی و اجرای سازه بازی دوطبقه', en: 'Designed and built a two-storey play structure' },
       { fa: 'اجرای پوشش MDF روی اسکلت فلزی و همکاری در اجرای اسکلت‌ها', en: 'MDF cladding over the steel frame, and helping build the frames' },
-      { fa: 'ساخت مجموعه شامل سرسره، راه‌پله و کابین بازی در طبقه بالا', en: 'Slide, staircase and play cabin on the upper level' },
-      { fa: 'طراحی فضای کافه کودک در طبقه پایین', en: 'A kids’ café zone on the lower level' },
+      { fa: 'ساخت مجموعه شامل سرسره، راه‌پله و کابین بازی در طبقه بالا', en: 'Built a slide, staircase and play cabin on the upper level' },
+      { fa: 'طراحی فضای کافه کودک در طبقه پایین', en: 'Designed a children’s café area on the lower level' },
       { fa: 'طراحی و اجرای سازه بازی با الهام از درخت', en: 'A tree-inspired play structure' },
-      { fa: 'طراحی مسیر صعود با الهام از دیواره صخره‌نوردی', en: 'A climbing route inspired by a rock wall' },
-      { fa: 'طراحی و اجرای مسیر خروج غلتکی با لوله و بلبرینگ', en: 'A roller exit route made from pipe and bearings' },
+      { fa: 'طراحی مسیر صعود با الهام از دیواره صخره‌نوردی', en: 'A climbing route inspired by a climbing wall' },
+      { fa: 'طراحی و اجرای مسیر خروج غلتکی با لوله و بلبرینگ', en: 'A roller exit route built from pipe and bearings' },
       { fa: 'اجرای قطعات MDF و پوشش بخش‌های مختلف سازه', en: 'MDF parts and cladding across the structures' },
       { fa: 'تکمیل لبه‌ها، اتصالات و جزئیات اجرایی با توجه به ایمنی کودکان', en: 'Edges, joints and details finished with child safety in mind' },
     ],
     result: {
       fa: 'مجموعه‌ای از سازه‌های بازی چندسطحی با ترکیب فلز و MDF، متناسب با فضای داخلی خانه بازی.',
-      en: 'A set of multi-level play structures in steel and MDF, tailored to the play house interior.',
+      en: 'A set of multi-level play structures in steel and MDF, tailored to the interior of the play house.',
     },
   },
   {
@@ -364,13 +364,13 @@ export const projects = [
       en: 'This project came through earlier work seen on Instagram, and covered the design and build of several structures with different uses.',
     },
     activities: [
-      { fa: 'طراحی و اجرای دو کلبه مشاغل کودک', en: 'Two children’s job huts' },
-      { fa: 'طراحی و اجرای اتاق مدیریت با فرم کلبه', en: 'A cabin-shaped manager’s office' },
+      { fa: 'طراحی و اجرای دو کلبه مشاغل کودک', en: 'Designed and built two children’s job huts' },
+      { fa: 'طراحی و اجرای اتاق مدیریت با فرم کلبه', en: 'Designed and built a manager’s office in the form of a cabin' },
       { fa: 'طراحی و اجرای سازه بازی با الهام از درخت', en: 'A tree-inspired play structure' },
-      { fa: 'طراحی و اجرای کلبه بازی دوطبقه با اسکلت فلزی', en: 'A two-storey play cabin on a steel frame' },
-      { fa: 'اجرای پوشش‌های MDF و جزئیات دکوراتیو', en: 'MDF cladding and decorative detail' },
+      { fa: 'طراحی و اجرای کلبه بازی دوطبقه با اسکلت فلزی', en: 'Designed and built a two-storey play cabin on a steel frame' },
+      { fa: 'اجرای پوشش‌های MDF و جزئیات دکوراتیو', en: 'MDF cladding and decorative details' },
       { fa: 'مونتاژ و نصب قطعات و تکمیل بخش‌های مختلف سازه‌ها', en: 'Assembly, installation and finishing of each structure' },
-      { fa: 'هماهنگی ابعاد و جزئیات طراحی با شرایط فضای موجود', en: 'Matching dimensions and details to the existing space' },
+      { fa: 'هماهنگی ابعاد و جزئیات طراحی با شرایط فضای موجود', en: 'Adjusting dimensions and design details to the existing space' },
     ],
     result: {
       fa: 'فضاهای متنوع برای بازی و نقش‌آفرینی کودکان، همراه با سازه‌های دکوراتیو هماهنگ با فضای داخلی مجموعه.',
@@ -386,7 +386,7 @@ export const projects = [
     title: { fa: 'مهدکودک جوانه‌ها', en: 'Javaneha Kindergarten' },
     sub: { fa: 'Javaneha', en: 'جوانه‌ها' },
     location: { fa: 'سپاهان‌شهر، اصفهان', en: 'Sepahanshahr, Isfahan' },
-    year: { fa: '۱۴۰۴', en: '2025' },
+    year: { fa: '۱۴۰۴', en: '2025–26' },
     topic: {
       fa: 'طراحی و اجرای دکوراسیون نمای ورودی',
       en: 'Design and build of the entrance façade decor',
@@ -398,8 +398,8 @@ export const projects = [
     activities: [
       { fa: 'طراحی نمای دکوراتیو ورودی', en: 'Design of the decorative entrance façade' },
       { fa: 'پوشش دیواری با ورق فومیزه (PVC Foam Board)', en: 'Wall cladding in PVC foam board' },
-      { fa: 'طراحی و اجرای حروف و نوشته‌های دکوراتیو', en: 'Decorative letters and lettering' },
-      { fa: 'آماده‌سازی قطعات موردنیاز برای اجرا', en: 'Preparing the parts for installation' },
+      { fa: 'طراحی و اجرای حروف و نوشته‌های دکوراتیو', en: 'Decorative lettering and signage' },
+      { fa: 'آماده‌سازی قطعات موردنیاز برای اجرا', en: 'Preparing the parts needed for installation' },
       { fa: 'نصب و تکمیل جزئیات اجرایی نما', en: 'Installation and final façade detailing' },
     ],
     result: {
@@ -413,7 +413,7 @@ export const projects = [
     cover: 9,
     n: '05',
     color: '#c98a4b',
-    title: { fa: 'غرفه نمایشگاه بین‌المللی کیف و کفش', en: 'Bag & Footwear Expo Booth' },
+    title: { fa: 'غرفه نمایشگاه بین‌المللی کیف و کفش', en: 'Luggage Booth at the Bag & Footwear Expo' },
     sub: { fa: 'Isfahan International Expo', en: 'نمایشگاه بین‌المللی اصفهان' },
     location: { fa: 'نمایشگاه بین‌المللی اصفهان', en: 'Isfahan International Exhibition' },
     year: { fa: '۱۴۰۴', en: '2025' },
@@ -423,7 +423,7 @@ export const projects = [
     },
     summary: {
       fa: 'مشارکت در طراحی و اجرای غرفه نمایشگاهی مرتبط با نمایشگاه کیف و کفش؛ غرفه‌ی فروش چمدان در نمایشگاه بین‌المللی اصفهان.',
-      en: 'Contributed to the design and build of a booth at the bag and footwear exhibition — a luggage sales stand at the Isfahan International Exhibition.',
+      en: 'Contributed to the design and build of an exhibition booth for the Bag & Footwear Exhibition — a luggage sales stand at the Isfahan International Exhibition.',
     },
     activities: [],
     result: null,
@@ -440,32 +440,32 @@ export const projects = [
     year: { fa: 'تابستان ۱۴۰۵', en: 'Summer 2026' },
     topic: {
       fa: 'بازطراحی ورودی و مدیریت، سازه‌های بازی و بهینه‌سازی فضای داخلی و محوطه',
-      en: 'Redesigned entrance and office, play structures and an optimized interior and yard',
+      en: 'Redesigned entrance and office, new play structures, and an optimized interior and yard',
     },
     summary: {
       fa: 'تغییر چیدمان برخی بخش‌های مجموعه، طراحی فضاهای کاربردی جدید و اجرای سازه‌های بازی متناسب با محدودیت‌های معماری ساختمان.',
-      en: 'Re-planning parts of the building, designing new functional spaces and building play structures that respect the architectural limits of the site.',
+      en: 'Re-planning parts of the building, designing new functional spaces and building play structures that work within the architectural constraints of the site.',
     },
     activities: [
       { fa: 'انتقال فضای مدیریت به نزدیکی ورودی اصلی مجموعه', en: 'Moved the office next to the main entrance' },
-      { fa: 'طراحی و اجرای فضای جدید مدیریت و پذیرش', en: 'Designed and built the new office and reception' },
+      { fa: 'طراحی و اجرای فضای جدید مدیریت و پذیرش', en: 'Designed and built the new office and reception area' },
       { fa: 'ایجاد فضای کنترل ورود و خروج کودکان', en: 'A control point for children’s arrival and departure' },
       { fa: 'نمای کلبه‌ای MDF با سقف شیب‌دار برای ورودی اتاق مدیریت، به‌جای نمای فلزی قبلی', en: 'An MDF cabin façade with a pitched roof for the office entrance, replacing the old metal one' },
       { fa: 'اجرای پوشش ترمووال در فضای دفتر مدیریت', en: 'Thermowood cladding in the manager’s office' },
       { fa: 'طراحی و اجرای قاب خاطرات همراه با نورپردازی', en: 'A memory frame with integrated lighting' },
       { fa: 'طراحی و اجرای قوس دکوراتیو با نام و لوگوی مهدکودک', en: 'A decorative arch carrying the kindergarten’s name and logo' },
-      { fa: 'نصب تجهیزات روشنایی و هماهنگ‌سازی آن‌ها با دکوراسیون', en: 'Lighting fixtures installed and matched to the decor' },
-      { fa: 'سازه بازی قلعه، طراحی‌شده برای ارتفاع کم سقف و استفاده بهتر از فضای عمودی', en: 'A castle play structure designed for a low ceiling, making better use of vertical space' },
-      { fa: 'ساخت اسکلت فلزی با همکاری نیروی کمکی و اجرای پوشش و نمای MDF', en: 'Steel frame built with a helper, then MDF cladding and façade' },
+      { fa: 'نصب تجهیزات روشنایی و هماهنگ‌سازی آن‌ها با دکوراسیون', en: 'Installed lighting fixtures and matched them to the decor' },
+      { fa: 'سازه بازی قلعه، طراحی‌شده برای ارتفاع کم سقف و استفاده بهتر از فضای عمودی', en: 'A castle-shaped play structure designed for a low ceiling, making better use of vertical space' },
+      { fa: 'ساخت اسکلت فلزی با همکاری نیروی کمکی و اجرای پوشش و نمای MDF', en: 'Steel frame built with a helper, followed by the MDF cladding and façade' },
       { fa: 'دو مسیر ورود (پله و مسیر صعود) و دو مسیر خروج (سرسره و مسیر غلتکی)', en: 'Two ways in (stairs and a climb) and two ways out (slide and roller route)' },
       { fa: 'فضای توپ‌بازی در قسمت زیرین سازه', en: 'A ball pit beneath the structure' },
-      { fa: 'طراحی و ساخت جاکفشی متناسب با ورودی، با فضای نشیمن برای پوشیدن کفش و سقف شیب‌دار در برابر بارندگی', en: 'A shoe rack for the entrance with a seat for putting shoes on, under a pitched roof against rain' },
-      { fa: 'پارتیشن محوطه با چوب روسی، ترمووال و گرین‌وال', en: 'Yard partition in Russian pine, thermowood and green wall' },
-      { fa: 'ساخت و نصب درب دسترسی به بخش دیگر حیاط', en: 'Access door to the other part of the yard' },
+      { fa: 'طراحی و ساخت جاکفشی متناسب با ورودی، با فضای نشیمن برای پوشیدن کفش و سقف شیب‌دار در برابر بارندگی', en: 'Designed and built a shoe rack for the entrance, with a seat for putting on shoes and a pitched roof to shelter it from rain' },
+      { fa: 'پارتیشن محوطه با چوب روسی، ترمووال و گرین‌وال', en: 'A yard partition combining Russian pine, thermowood and a green wall' },
+      { fa: 'ساخت و نصب درب دسترسی به بخش دیگر حیاط', en: 'Built and installed an access door to the other part of the yard' },
     ],
     result: {
       fa: 'بهبود عملکرد ورودی و مدیریت، استفاده بهتر از فضای محدود و سازه‌های بازی و عناصر دکوراتیو متناسب با نیازهای مجموعه.',
-      en: 'A better working entrance and office, smarter use of limited space, and play structures and decor shaped to the kindergarten’s needs.',
+      en: 'A more functional entrance and office, better use of limited space, and play structures and decor shaped to the kindergarten’s needs.',
     },
   },
 ];
