@@ -235,7 +235,10 @@ html[lang='fa'] .kicker {
 /* ───────────── 3D stage (fixed, transparent) ───────────── */
 .stage {
   position: fixed;
-  inset: 0;
+  inset-block-start: 0;
+  inset-inline: 0;
+  height: 100vh;
+  height: 100lvh; /* large viewport: stays the same size when the mobile URL bar hides/shows */
   z-index: 0;
   pointer-events: none;
 }
@@ -1741,6 +1744,42 @@ html[dir='rtl'] .viewer__next .ico {
   }
   [data-reveal] {
     opacity: 1;
+    transform: none;
+  }
+}
+
+/* ───────────── touch devices: keep scrolling light ───────────── */
+@media (hover: none) {
+  .nav.is-stuck,
+  .nav.menu-open,
+  .nav__links,
+  .eyebrow,
+  .btn--ghost,
+  .chip,
+  .process__panel,
+  .vid__play,
+  .modal__close,
+  .viewer__btn,
+  .portrait figcaption {
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+  .nav.is-stuck,
+  .nav.menu-open {
+    background: rgba(21, 17, 13, 0.94);
+  }
+  .process__panel {
+    background: rgba(21, 17, 13, 0.92);
+  }
+  .cards {
+    perspective: none;
+  }
+  .card {
+    transform-style: flat;
+    will-change: auto;
+  }
+  .card__n,
+  .card__body {
     transform: none;
   }
 }

@@ -575,7 +575,14 @@ function initStage() {
       s.mouseY = (e.clientY / innerHeight - 0.5) * 2;
     });
   }
+  // Mobile browsers fire resize whenever the URL bar collapses; re-sizing the WebGL canvas
+  // then makes scrolling stutter, so only react to real width changes or big height changes.
+  let lastW = innerWidth;
+  let lastH = innerHeight;
   addEventListener('resize', () => {
+    if (innerWidth === lastW && Math.abs(innerHeight - lastH) < 160) return;
+    lastW = innerWidth;
+    lastH = innerHeight;
     stage.resize();
     layoutScene();
   });
@@ -759,7 +766,8 @@ function initScrollFx() {
 }
 
 function initSmooth() {
-  if (reduceMotion) return;
+  // Touch screens already scroll natively and smoothly; JS smooth-scroll only adds jank there.
+  if (reduceMotion || matchMedia('(pointer: coarse)').matches) return;
   lenis = new Lenis({ lerp: 0.1, wheelMultiplier: 0.95 });
   lenis.on('scroll', ScrollTrigger.update);
   gsap.ticker.add((t) => lenis.raf(t * 1000));

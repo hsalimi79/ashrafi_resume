@@ -16,7 +16,7 @@ export function createScene(canvas) {
     powerPreference: 'high-performance',
   });
   renderer.setClearColor(0x000000, 0);
-  renderer.setPixelRatio(Math.min(devicePixelRatio || 1, isCoarse ? 1.75 : 2));
+  renderer.setPixelRatio(Math.min(devicePixelRatio || 1, isCoarse ? 1.5 : 2));
   renderer.outputColorSpace = THREE.SRGBColorSpace;
   renderer.toneMapping = THREE.ACESFilmicToneMapping;
   renderer.toneMappingExposure = 1.08;
