@@ -68,6 +68,13 @@ export const ui = {
   process: {
     kicker: { fa: 'فرایند', en: 'Process' },
     title: { fa: 'از ایده تا فضایی که می‌شود در آن زندگی کرد', en: 'From idea to a space you can actually live in' },
+    next: { fa: 'مرحله بعد', en: 'Next step' },
+    prev: { fa: 'مرحله قبل', en: 'Previous' },
+    hint: {
+      fa: 'روی مراحل بزنید و ببینید مدل قدم‌به‌قدم ساخته می‌شود.',
+      en: 'Tap the steps and watch the model get built, one stage at a time.',
+    },
+    stepsLabel: { fa: 'مراحل فرایند', en: 'Process steps' },
     steps: [
       {
         t: { fa: 'ایده و تحلیل فضا', en: 'Idea & site analysis' },
@@ -108,7 +115,10 @@ export const ui = {
   },
   projects: {
     kicker: { fa: 'پروژه‌ها', en: 'Projects' },
-    title: { fa: 'شش پروژه، شش فضای زنده برای کودکان', en: 'Six projects, six places kids actually play in' },
+    title: {
+      fa: 'پنج پروژه‌ی مهدکودک و خانه‌بازی، و یک غرفه‌ی نمایشگاهی',
+      en: 'Five kindergarten and play-house projects, plus one exhibition booth',
+    },
     intro: {
       fa: 'پروژه‌های مهدکودک و خانه بازی — سرزمین کودکی، کیدزلانژ، انیشتین، جوانه‌ها و فرشتگان — شامل کلبه‌های مشاغل، سازه‌های چندطبقه بازی، دکورهای MDF، فضاهای مدیریتی، ورودی‌های دکوراتیو، دیوارهای تزئینی و تجهیزات سفارشی، به‌همراه محوطه‌سازی دکوراتیو، گارد باغچه، گرین‌وال، فلاورباکس و نیمکت.',
       en: 'Kindergarten and play-house projects — Kids Land, KidzLounge, Einstein, Javaneha and Fereshtegan — covering job huts, multi-level play structures, MDF decor, office spaces, decorative entrances, feature walls and custom fixtures, plus decorative landscaping, planter guards, green walls, flower boxes and benches.',

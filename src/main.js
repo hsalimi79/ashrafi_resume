@@ -142,17 +142,24 @@ function aboutHTML() {
 
 function processHTML() {
   const p = ui.process;
+  const tabs = p.steps
+    .map(
+      (s, i) => `
+        <button class="tab" type="button" role="tab" id="tab-${i}" data-tab="${i}" aria-controls="step-${i}" aria-selected="false" tabindex="-1">
+          <b>0${i + 1}</b><span>${bi(s.t)}</span>
+        </button>`,
+    )
+    .join('');
   const steps = p.steps
     .map(
       (s, i) => `
-      <li class="step" data-step="${i}">
-        <span class="step__n">0${i + 1}</span>
+      <li class="step" role="tabpanel" id="step-${i}" aria-labelledby="tab-${i}" data-step="${i}">
+        <span class="step__n" aria-hidden="true">0${i + 1}</span>
         <h3>${bi(s.t)}</h3>
         <p>${bi(s.d)}</p>
       </li>`,
     )
     .join('');
-  const dots = p.steps.map((s, i) => `<i data-dot="${i}"></i>`).join('');
   return `
   <section class="process" id="process">
     <div class="process__sticky">
@@ -160,8 +167,13 @@ function processHTML() {
         <div class="process__panel">
           <p class="kicker">${bi(p.kicker)}</p>
           <h2 class="h2">${bi(p.title)}</h2>
+          <div class="tabs" role="tablist" data-aria data-aria-fa="${p.stepsLabel.fa}" data-aria-en="${p.stepsLabel.en}">${tabs}</div>
           <ol class="steps">${steps}</ol>
-          <div class="rail" aria-hidden="true"><div class="rail__bar"><b id="rail-fill"></b></div><div class="rail__dots">${dots}</div></div>
+          <div class="step-nav">
+            <button class="btn btn--ghost" type="button" data-step-prev><span class="back">${icon('arrow')}</span>${bi(p.prev)}</button>
+            <button class="btn btn--primary" type="button" data-step-next>${bi(p.next)}${icon('arrow')}</button>
+          </div>
+          <p class="step-hint">${bi(p.hint)}</p>
         </div>
       </div>
     </div>
@@ -481,7 +493,6 @@ function routeFromHash() {
 
 /* ───────────── 3D stage + scroll choreography ───────────── */
 let stage = null;
-let processTrigger = null;
 let aboutTop = 0;
 let introBuild = 0;
 let processProgress = 0;
@@ -496,7 +507,7 @@ function layoutScene() {
     s.sy = 0;
   } else {
     s.sx = 0;
-    s.sy = inProcess ? -0.2 : 0.26; // phone: model above the process text, below the hero text
+    s.sy = inProcess ? -0.3 : 0.26; // phone: model above the process text, below the hero text
   }
   s.zoom = isDesktop() ? (inProcess ? 0.82 : 1) : 0.95;
 }
@@ -570,34 +581,76 @@ function initStage() {
   });
 }
 
+// How built the 3D model is at each step (0 = pure blueprint, 1 = finished and lit).
+const STEP_BUILD = [0, 0.28, 0.55, 0.8, 1];
+
 function initProcess() {
   const section = document.getElementById('process');
-  const steps = [...section.querySelectorAll('.step')];
-  const dots = [...section.querySelectorAll('[data-dot]')];
-  const fill = document.getElementById('rail-fill');
-  const n = steps.length;
+  const tabs = [...section.querySelectorAll('.tab')];
+  const panels = [...section.querySelectorAll('.step')];
+  const n = panels.length;
+  const prev = section.querySelector('[data-step-prev]');
+  const next = section.querySelector('[data-step-next]');
+  const tween = { v: 0 };
   let cur = -1;
-  const setStep = (i) => {
+  let timer = 0;
+  let interacted = false;
+
+  const goTo = (i, { user = false } = {}) => {
+    i = Math.max(0, Math.min(n - 1, i));
+    if (user) {
+      interacted = true;
+      clearInterval(timer);
+    }
     if (i === cur) return;
     cur = i;
-    steps.forEach((el, k) => el.classList.toggle('is-on', k === i));
-    dots.forEach((el, k) => el.classList.toggle('is-on', k <= i));
+    tabs.forEach((t, k) => {
+      const on = k === i;
+      t.classList.toggle('is-on', on);
+      t.classList.toggle('is-done', k < i);
+      t.setAttribute('aria-selected', String(on));
+      t.tabIndex = on ? 0 : -1;
+    });
+    panels.forEach((el, k) => el.classList.toggle('is-on', k === i));
+    prev.disabled = i === 0;
+    next.disabled = i === n - 1;
+    gsap.to(tween, {
+      v: STEP_BUILD[i],
+      duration: reduceMotion ? 0 : 1.6,
+      ease: 'power2.inOut',
+      overwrite: true,
+      onUpdate: () => (processProgress = tween.v),
+    });
   };
-  setStep(0);
+  goTo(0);
 
-  processTrigger = ScrollTrigger.create({
-    trigger: section,
-    start: 'top top',
-    end: 'bottom bottom',
-    onUpdate(self) {
-      processProgress = self.progress;
-      setStep(Math.min(n - 1, Math.floor(self.progress * n * 0.999)));
-      fill.style.transform = `scaleX(${self.progress})`;
-    },
-    onRefresh(self) {
-      processProgress = self.progress;
-    },
+  tabs.forEach((t, i) => {
+    t.addEventListener('click', () => goTo(i, { user: true }));
+    t.addEventListener('keydown', (e) => {
+      const rtl = document.documentElement.dir === 'rtl';
+      const d = e.key === 'ArrowRight' ? (rtl ? -1 : 1) : e.key === 'ArrowLeft' ? (rtl ? 1 : -1) : 0;
+      if (!d) return;
+      e.preventDefault();
+      goTo(cur + d, { user: true });
+      tabs[cur].focus();
+    });
   });
+  prev.addEventListener('click', () => goTo(cur - 1, { user: true }));
+  next.addEventListener('click', () => goTo(cur + 1, { user: true }));
+
+  // Until the visitor takes over, walk through the steps by itself so it is obvious they change.
+  if (!reduceMotion) {
+    const io = new IntersectionObserver(
+      ([e]) => {
+        clearInterval(timer);
+        if (e.isIntersecting && !interacted) {
+          timer = setInterval(() => goTo(cur >= n - 1 ? 0 : cur + 1), 5200);
+        }
+      },
+      { threshold: 0.55 },
+    );
+    io.observe(section);
+  }
 }
 
 function initScrollFx() {
