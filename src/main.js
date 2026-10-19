@@ -72,7 +72,7 @@ function navHTML() {
   return `
   <header class="nav" id="nav">
     <a class="nav__brand" href="#top" aria-label="${person.name.en}">
-      <span class="nav__mono">${bi(person.initials)}</span>
+      <img class="nav__mono" src="${asset('img/favicon.png')}" width="38" height="38" alt="Decomode" />
       <span class="nav__name">${bi(person.name)}</span>
     </a>
     <nav class="nav__links" id="menu" aria-label="Main">${links}</nav>
@@ -93,6 +93,7 @@ function heroHTML() {
     <div class="hero__grid" aria-hidden="true"></div>
     <div class="wrap hero__inner">
       <div class="hero__text">
+        <img class="hero__logo" data-hero src="${asset('img/logo.webp')}" width="1476" height="690" alt="Decomode — Interior Design & Decoration" decoding="async" />
         <p class="eyebrow" data-hero>${bi(ui.hero.eyebrow)}</p>
         <h1 class="hero__name" data-hero>${bi(person.name)}</h1>
         <p class="hero__role" data-hero>${bi(person.role)}</p>

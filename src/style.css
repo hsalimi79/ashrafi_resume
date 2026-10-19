@@ -293,6 +293,18 @@ main {
   font-size: 0.9rem;
   font-weight: 900;
 }
+img.nav__mono {
+  object-fit: cover;
+  background: none;
+}
+.hero__logo {
+  display: block;
+  width: min(250px, 62vw);
+  height: auto;
+  border-radius: 14px;
+  margin-block-end: 1.4rem;
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.45);
+}
 .nav__name {
   font-size: 0.98rem;
   white-space: nowrap;
