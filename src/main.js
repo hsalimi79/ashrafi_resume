@@ -15,7 +15,7 @@ import { createScene } from './scene.js';
 gsap.registerPlugin(ScrollTrigger);
 
 const BASE = import.meta.env.BASE_URL;
-const asset = (p) => BASE + p;
+const asset = (p) => /^https?:\/\//.test(p) ? p : BASE + p;
 const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
 const isDesktop = () => innerWidth >= 960;
 
@@ -414,8 +414,8 @@ function viewerHTML() {
     it.type === 'drive'
       ? `<iframe class="viewer__media viewer__embed" src="${it.src}" style="--media-ratio:${it.w / it.h}" title="Google Drive video" allow="autoplay; fullscreen" allowfullscreen></iframe>`
       : it.type === 'video'
-      ? `<video class="viewer__media" src="${asset(it.src)}" poster="${asset(it.poster)}" controls autoplay playsinline preload="auto"></video>`
-      : `<img class="viewer__media" src="${asset(it.src)}" width="${it.w}" height="${it.h}" alt="" decoding="async" />`;
+        ? `<video class="viewer__media" src="${asset(it.src)}" poster="${asset(it.poster)}" controls autoplay playsinline preload="auto"></video>`
+        : `<img class="viewer__media" src="${asset(it.src)}" width="${it.w}" height="${it.h}" alt="" decoding="async" />`;
   return `
     <button class="viewer__btn viewer__close" type="button" data-vclose data-aria data-aria-fa="${t.close.fa}" data-aria-en="${t.close.en}">${icon('x')}</button>
     <button class="viewer__btn viewer__nav viewer__prev" type="button" data-vprev data-aria data-aria-fa="${t.prev.fa}" data-aria-en="${t.prev.en}">${icon('chev')}</button>

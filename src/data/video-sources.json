@@ -1,0 +1,36 @@
+{
+  "angels": {
+    "20260829_100540.mp4": {
+      "src": "https://drive.google.com/file/d/1bN0Mc6mPg_bKXUtXOtdPl1XkNyqQLpvs/preview",
+      "provider": "google-drive"
+    },
+    "20260917_135456.mp4": {
+      "src": "https://drive.google.com/file/d/1jSihaZhRKMu1bE68r7YjTgRkos3h9zpO/preview",
+      "provider": "google-drive"
+    }
+  },
+  "einstein": {
+    "20250811_133456.mp4": {
+      "src": "https://drive.google.com/file/d/1aHRbjQH614Xn_rbZfV41PqzzmPed6GRB/preview",
+      "provider": "google-drive"
+    },
+    "20250814_092848.mp4": {
+      "src": "https://drive.google.com/file/d/1EwWhLNxAKDEOu97YSDDqOU3ZI15A__m_/preview",
+      "provider": "google-drive"
+    },
+    "vid_20250925_004136_520_mp4.mp4": {
+      "src": "https://drive.google.com/file/d/1O7nxK2OwkaPKqPaYANffmttGRmvVG2T1/preview",
+      "provider": "google-drive"
+    },
+    "vid_20250925_004137_838_mp4.mp4": {
+      "src": "https://drive.google.com/file/d/1nF9uckWxEMOmHsKiS3qfuGHZqZtaCVmR/preview",
+      "provider": "google-drive"
+    }
+  },
+  "kidsland": {
+    "inshot_20261008_094945259.mp4": {
+      "src": "https://drive.google.com/file/d/1Nvd-IskGkhboCjEZoFgWIi4MZiutzf9P/preview",
+      "provider": "google-drive"
+    }
+  }
+}

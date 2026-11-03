@@ -6,7 +6,8 @@ Vite + Three.js static site (Persian RTL / English LTR). Deployed to GitHub Page
 - Text (both languages), projects, services: `src/data/content.js`
 - Contact buttons (phone / WhatsApp / Telegram / Instagram / email): `contact` at the bottom of `src/data/content.js` — empty values stay hidden.
 - Photos/videos: `public/media/<project>/`. After adding files run `npm run manifest` (dev/build do it automatically).
-- Google Drive videos: `src/data/drive-videos.json` maps a project slug and original MP4 filename to a Drive file ID. Keep the matching `.poster.webp` in `public/media/<project>/`, but omit the MP4. The gallery uses Drive's embedded player; the Drive file must be viewable by anyone with the link.
+- External videos: `src/data/video-sources.json` maps a project slug and original MP4 filename to an object with an HTTPS `src` URL. For a direct playable video, omit `provider`; for Google Drive use `provider: "google-drive"` and a `/file/d/<file-id>/preview` URL. Drive videos use an iframe; direct URLs and local videos use the existing HTML video player. The Drive file must be viewable by anyone with the link.
+- Keep each external video's matching `.poster.webp` in `public/media/<project>/`, but move its MP4 outside `public/`. The manifest validates the configuration and fails if an external video's local MP4 is still present, so Vite cannot accidentally copy it into `dist/`.
 
 ## Run
 ```
@@ -14,6 +15,9 @@ npm install
 npm run dev
 npm run build   # outputs dist/
 ```
+
+## Cloudflare Pages
+Use `npm run build` as the build command and `dist` as the output directory. Each deployed file must be at most 25 MiB. Vite copies `public/` into `dist/`, so changing a manifest URL alone does not exclude a local MP4 from deployment. All remaining local files must also satisfy the size limit; externalizing one video does not automatically make the entire output eligible.
 
 ## Custom subdomain on GitHub Pages
 1. Create `public/CNAME` containing only your subdomain, e.g. `resume.example.com`.
