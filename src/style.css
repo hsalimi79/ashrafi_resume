@@ -1363,9 +1363,11 @@ html[lang='fa'] .tools__title {
 
 /* ───────────── reveal ───────────── */
 [data-reveal] {
+  transition: opacity 0.9s var(--ease) var(--d, 0ms), transform 0.9s var(--ease) var(--d, 0ms);
+}
+[data-reveal].reveal-pending:not(.in) {
   opacity: 0;
   transform: translateY(28px);
-  transition: opacity 0.9s var(--ease) var(--d, 0ms), transform 0.9s var(--ease) var(--d, 0ms);
 }
 [data-reveal].in {
   opacity: 1;
@@ -1373,6 +1375,49 @@ html[lang='fa'] .tools__title {
 }
 .card[data-reveal].in {
   transition: opacity 0.9s var(--ease), border-color 0.4s, box-shadow 0.5s;
+}
+
+/* Readable, native navigation while JS is delayed or unavailable. */
+html:not(.nav-ready) .nav__tools {
+  display: none;
+}
+html:not(.process-ready) .tabs,
+html:not(.process-ready) .step-nav,
+html:not(.process-ready) .step-hint {
+  display: none;
+}
+html:not(.process-ready) .step {
+  position: relative;
+  opacity: 1;
+  transform: none;
+  pointer-events: auto;
+  margin-block-end: 28px;
+}
+@media (max-width: 860px) {
+  html:not(.nav-ready) .nav {
+    position: static;
+    flex-wrap: wrap;
+    margin-block: 14px;
+    border-radius: 24px;
+    background: var(--ink);
+  }
+  html:not(.nav-ready) .nav__links {
+    position: static;
+    flex: 1 1 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 0;
+    background: none;
+    border: 0;
+    backdrop-filter: none;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+  }
+  html:not(.nav-ready) .nav__links a {
+    padding: 6px 10px;
+    font-size: 0.85rem;
+  }
 }
 
 /* ───────────── project modal ───────────── */
@@ -1767,7 +1812,8 @@ html[dir='rtl'] .viewer__next .ico {
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
   }
-  [data-reveal] {
+  [data-reveal],
+  [data-reveal].reveal-pending:not(.in) {
     opacity: 1;
     transform: none;
   }

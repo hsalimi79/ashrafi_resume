@@ -14,7 +14,13 @@ Vite + Three.js static site (Persian RTL / English LTR). Deployed to GitHub Page
 npm install
 npm run dev
 npm run build   # outputs dist/
+npm run test:build   # checks rendered HTML, chunks, media and deployment size
 ```
+
+## Resilient first load
+Vite renders the existing bilingual page templates from `src/render.js` into HTML during dev/build. Content, section links and contact/download links remain visible if JavaScript is delayed or unavailable; galleries and language controls are enhanced by `src/main.js`. Reveal animations only hide off-screen elements after their observer is installed. The process steps are a readable list until their controls initialize.
+
+The Three.js scene is an optional dynamic import, scheduled after the first paint. A failed scene download or unavailable WebGL does not prevent the resume and galleries from initializing. No changes to DNS or the hosting service are required.
 
 ## Cloudflare Pages
 Use `npm run build` as the build command and `dist` as the output directory. Each deployed file must be at most 25 MiB. Vite copies `public/` into `dist/`, so changing a manifest URL alone does not exclude a local MP4 from deployment. All remaining local files must also satisfy the size limit; externalizing one video does not automatically make the entire output eligible.

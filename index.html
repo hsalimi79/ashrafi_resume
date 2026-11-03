@@ -11,9 +11,15 @@
     <meta name="theme-color" content="#15110d" />
     <meta property="og:title" content="محمد جواد اشرفی — Mohammad Javad Ashrafi" />
     <meta property="og:description" content="Interior designer & builder of children’s spaces — Isfahan." />
-    <meta property="og:image" content="https://hossein-salimi.resumio.ir/ashrafi_resume/img/portrait.webp" />
+    <meta property="og:image" content="https://ashrafi.resumio.ir/img/portrait.webp" />
     <link rel="icon" type="image/png" href="./img/favicon.png" />
     <link rel="apple-touch-icon" href="./img/apple-touch-icon.png" />
+    <script>
+      // Pick the language before paint, even if the application bundle is delayed.
+      const lang = new URLSearchParams(location.search).get('lang') === 'en' ? 'en' : 'fa';
+      document.documentElement.lang = lang;
+      document.documentElement.dir = lang === 'fa' ? 'rtl' : 'ltr';
+    </script>
   </head>
   <body>
     <a class="skip" href="#about"><span data-l="fa">پرش به محتوا</span><span data-l="en">Skip to content</span></a>
@@ -22,13 +28,13 @@
       <canvas id="stage"></canvas>
     </div>
 
-    <div id="app"></div>
+    <div id="app"><!--resume-content--></div>
 
     <dialog id="project" class="modal" aria-labelledby="project-title"></dialog>
     <dialog id="viewer" class="viewer" aria-label="Media viewer"></dialog>
 
     <noscript>
-      <p style="padding:2rem;color:#fff">لطفاً جاوااسکریپت را فعال کنید · Please enable JavaScript.</p>
+      <p style="padding:2rem;color:#fff">برای نمایش گالری و امکانات تعاملی، جاوااسکریپت را فعال کنید · Enable JavaScript for galleries and interactive features.</p>
     </noscript>
 
     <script type="module" src="/src/main.js"></script>
