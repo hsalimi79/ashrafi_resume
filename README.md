@@ -6,6 +6,7 @@ Vite + Three.js static site (Persian RTL / English LTR). Deployed to GitHub Page
 - Text (both languages), projects, services: `src/data/content.js`
 - Contact buttons (phone / WhatsApp / Telegram / Instagram / email): `contact` at the bottom of `src/data/content.js` — empty values stay hidden.
 - Photos/videos: `public/media/<project>/`. After adding files run `npm run manifest` (dev/build do it automatically).
+- Google Drive videos: `src/data/drive-videos.json` maps a project slug and original MP4 filename to a Drive file ID. Keep the matching `.poster.webp` in `public/media/<project>/`, but omit the MP4. The gallery uses Drive's embedded player; the Drive file must be viewable by anyone with the link.
 
 ## Run
 ```

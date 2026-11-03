@@ -1,6 +1,6 @@
 // Scans public/media/<slug>/ and writes src/data/media.json
 // (image + video lists with dimensions so the gallery can reserve space and avoid layout shift).
-import { readdir, writeFile, mkdir } from 'node:fs/promises';
+import { readdir, readFile, writeFile, mkdir } from 'node:fs/promises';
 import { existsSync } from 'node:fs';
 import path from 'node:path';
 import sharp from 'sharp';
@@ -8,6 +8,7 @@ import sharp from 'sharp';
 const root = path.resolve(import.meta.dirname, '..');
 const mediaDir = path.join(root, 'public', 'media');
 const outFile = path.join(root, 'src', 'data', 'media.json');
+const driveVideos = JSON.parse(await readFile(path.join(root, 'src', 'data', 'drive-videos.json'), 'utf8'));
 
 const size = async (file) => {
   const { width, height } = await sharp(file).metadata();
@@ -17,7 +18,9 @@ const size = async (file) => {
 const manifest = {};
 for (const slug of (await readdir(mediaDir)).sort()) {
   const dir = path.join(mediaDir, slug);
-  const files = (await readdir(dir)).sort();
+  // Keep remote videos in the gallery after their local MP4 has been removed.
+  const remote = driveVideos[slug] ?? {};
+  const files = [...new Set([...(await readdir(dir)), ...Object.keys(remote)])].sort();
   const images = [];
   const videos = [];
 
@@ -30,7 +33,8 @@ for (const slug of (await readdir(mediaDir)).sort()) {
       const posterName = f.replace(/\.mp4$/, '.poster.webp');
       if (!existsSync(path.join(dir, posterName))) continue;
       videos.push({
-        src: url,
+        src: remote[f] ? `https://drive.google.com/file/d/${remote[f]}/preview` : url,
+        ...(remote[f] ? { provider: 'google-drive' } : {}),
         poster: `media/${slug}/${posterName}`,
         ...(await size(path.join(dir, posterName))),
       });

@@ -379,7 +379,7 @@ function openProject(id, { fromHash = false } = {}) {
   if (!fromHash) location.hash = `#/project/${id}`;
   const m = mediaOf(p);
   viewerItems = [
-    ...(m?.videos ?? []).map((v) => ({ type: 'video', src: v.src, poster: v.poster, w: v.w, h: v.h })),
+    ...(m?.videos ?? []).map((v) => ({ ...v, type: v.provider === 'google-drive' ? 'drive' : 'video' })),
     ...(m?.images ?? []).map((im) => ({ type: 'image', src: im.src, w: im.w, h: im.h })),
   ];
 }
@@ -411,7 +411,9 @@ function viewerHTML() {
   const total = viewerItems.length;
   const counter = `${viewerIdx + 1} / ${total}`;
   const mediaEl =
-    it.type === 'video'
+    it.type === 'drive'
+      ? `<iframe class="viewer__media viewer__embed" src="${it.src}" style="--media-ratio:${it.w / it.h}" title="Google Drive video" allow="autoplay; fullscreen" allowfullscreen></iframe>`
+      : it.type === 'video'
       ? `<video class="viewer__media" src="${asset(it.src)}" poster="${asset(it.poster)}" controls autoplay playsinline preload="auto"></video>`
       : `<img class="viewer__media" src="${asset(it.src)}" width="${it.w}" height="${it.h}" alt="" decoding="async" />`;
   return `
